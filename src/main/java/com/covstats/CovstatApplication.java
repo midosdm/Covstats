@@ -1,0 +1,13 @@
+package com.covstats;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class CovstatApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(CovstatApplication.class, args);
+    }
+
+}
