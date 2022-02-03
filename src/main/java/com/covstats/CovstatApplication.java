@@ -1,14 +1,8 @@
 package com.covstats;
 
-import com.covstats.services.CSVService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.scheduling.annotation.EnableScheduling;
-
-import java.net.MalformedURLException;
-import java.net.URL;
 
 //implements CommandLineRunner
 @SpringBootApplication
