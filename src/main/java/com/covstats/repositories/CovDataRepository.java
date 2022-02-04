@@ -1,4 +1,4 @@
-package com.covstats.Repositories;
+package com.covstats.repositories;
 
 import com.covstats.entities.CovData;
 import org.springframework.data.jpa.repository.JpaRepository;

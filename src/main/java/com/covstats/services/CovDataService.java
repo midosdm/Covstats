@@ -1,9 +1,10 @@
 package com.covstats.services;
 
-import com.covstats.Helpers.CSVHelper;
-import com.covstats.Repositories.CovDataRepository;
+import com.covstats.helpers.CSVHelper;
+import com.covstats.repositories.CovDataRepository;
 import com.covstats.entities.CovData;
-import org.apache.tomcat.jni.Local;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
@@ -19,17 +20,27 @@ public class CovDataService {
     @Autowired
     private CovDataRepository covDataRepository;
 
+    private static final Logger logger = LogManager.getLogger(CovDataService.class);
+
     public final URL url = new URL("https://coronavirus.politologue.com/data/coronavirus/coronacsv.aspx?format=csv&t=pays");
 
+    // this is a simple constructor stating that this class throws a malformedUrlException
     public CovDataService() throws MalformedURLException {
     }
 
+    /**
+     *
+     * @param url
+     */
     public void save(URL url) {
             List<CovData> covDataList = CSVHelper.csvToCovData(url);
             covDataList.stream().forEach((covData -> covDataRepository.save(covData)));
-        System.out.println("save called");
+            logger.debug("save called");
     }
 
+    /**
+     *
+     */
     @Scheduled(cron = "* * 1 * * ?")
     public void callBack(){
         save(url);
@@ -40,24 +51,28 @@ public class CovDataService {
     }
 
     public List<CovData> getByPays(String pays){
+        List<CovData> covDataList = new ArrayList<>();
         try{
-//            List<CovData> covDataList = covDataRepository.findByPays(pays);
-            List<CovData> covDataList = new ArrayList<CovData>();
             covDataRepository.findByPays(pays).forEach(covDataList::add);
 
             return covDataList;
         }catch (Exception e){
-            System.out.println(e.getMessage());
+            logger.error(e.getMessage());
         }
-        return null;
+        return covDataList;
     }
 
+    /**
+     *
+     * @param pays
+     * @param date
+     * @return
+     */
     public CovData getByPaysAndDate(String pays, LocalDate date){
         try{
-            CovData covData = covDataRepository.findByPaysAndDate(pays, date);
-            return covData;
+            return covDataRepository.findByPaysAndDate(pays, date);
         }catch (Exception e){
-            System.out.println(e.getMessage());
+            logger.error(e.getMessage());
         }
         return null;
     }
@@ -79,10 +94,11 @@ public class CovDataService {
             result.setTauxDeces(covDataToday.getTauxDeces());
             result.setTauxGuerison(covDataToday.getTauxGuerison());
             result.setTauxInfection(covDataToday.getTauxInfection());
-            System.out.println(result);
+
+            logger.info(result);
             return result;
         }catch (Exception e){
-            System.out.println(e.getMessage());
+            logger.error(e.getMessage());
         }
         return null;
     }

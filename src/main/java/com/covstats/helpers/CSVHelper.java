@@ -1,8 +1,9 @@
-package com.covstats.Helpers;
+package com.covstats.helpers;
 
 import com.covstats.entities.CovData;
 import org.apache.commons.csv.*;
-import org.springframework.stereotype.Component;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.*;
@@ -10,18 +11,18 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class CSVHelper {
-    public static String TYPE = "text/csv";
-    static String[] HEADERS = { "Date", "Pays", "Infections", "Deces", "Guerisons", "TauxDeces", "TauxGuerison", "TauxInfection" };
+    public static final String TYPE = "text/csv";
+    static final String[] HEADERS = { "Date", "Pays", "Infections", "Deces", "Guerisons", "TauxDeces", "TauxGuerison", "TauxInfection" };
+
+    private static final Logger logger = LogManager.getLogger(CSVHelper.class);
 
     public static boolean hasCSVFormat(MultipartFile file) {
         if (!TYPE.equals(file.getContentType())) {
             return false;
         }
-
         return true;
     }
 
@@ -31,7 +32,7 @@ public class CSVHelper {
             URLConnection yc = url.openConnection();
             is = yc.getInputStream();
         } catch(IOException e){
-            e.getMessage();
+            logger.error(e.getMessage());
             return null;
         }
         try {

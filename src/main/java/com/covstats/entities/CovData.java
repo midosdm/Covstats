@@ -46,15 +46,4 @@ public class CovData {
 
     @Column(name="TauxInfection")
     private Double tauxInfection;
-
-    public CovData(Long id, String pays, Long infections, Long deces, Long guerisons, Double tauxDeces, Double tauxGuerison, Double tauxInfection){
-        this.id = id;
-        this.pays = pays;
-        this.infections = infections;
-        this.deces=deces;
-        this.guerisons=guerisons;
-        this.tauxDeces=tauxDeces;
-        this.tauxGuerison = tauxGuerison;
-        this.tauxInfection=tauxInfection;
-    }
 }
