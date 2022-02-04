@@ -48,7 +48,6 @@ public class CSVHelper {
             for (CSVRecord csvRecord : csvRecords){
                 if(csvRecord.getRecordNumber() > 7){
                 CovData covData = new CovData(
-                        csvParser.getRecordNumber(),
                         LocalDate.parse(csvRecord.get(0)),
                         csvRecord.get(1),
                         Long.parseLong(csvRecord.get(2)),
