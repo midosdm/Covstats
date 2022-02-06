@@ -43,6 +43,12 @@ public class CovDataController {
         return covDataService.getByPaysAndDate(pays, LocalDate.parse(date));
     }
 
+    @GetMapping(path="/getByPaysAndDateNonCumule")
+    public CovData getByPaysAndDateNonCumule(@RequestParam("pays") String pays, @RequestParam("date") String date){
+        logger.info("get country data by date called");
+        return covDataService.getByPaysAndDateNonCumule(pays, LocalDate.parse(date));
+    }
+
     @GetMapping(path="/getByPaysToday")
     public CovData getByPaysToday(@RequestParam("pays") String pays){
         logger.info("get today's country data called");

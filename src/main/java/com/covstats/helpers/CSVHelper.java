@@ -26,6 +26,11 @@ public class CSVHelper {
         return true;
     }
 
+    /**
+     * this method retrieves data from the url passed as a parameter and it then parses it into a list.
+     * @param url
+     * @return CovDataList
+     */
     public static List<CovData> csvToCovData(URL url) {
         InputStream is;
         try {

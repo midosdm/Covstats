@@ -29,7 +29,7 @@ public class CovDataService {
     }
 
     /**
-     *
+     * this method calls the CSVHelper method in order to retrieve data from the given url and then store it in the database.
      * @param url
      */
     public void save(URL url) {
@@ -39,17 +39,26 @@ public class CovDataService {
     }
 
     /**
-     *
+     * this function calls the save method after a certain period of time has passed, the period of time is given by the cron expression
      */
     @Scheduled(cron = "* * 1 * * ?")
     public void callBack(){
         save(url);
     }
 
+    /**
+     * this method return all of the data in the database
+     * @return
+     */
     public List<CovData> getAllCovData() {
         return covDataRepository.findAll();
     }
 
+    /**
+     * this function takes a country as a parameter and returns the data concerning that country for every day up until the current day.
+     * @param pays
+     * @return
+     */
     public List<CovData> getByPays(String pays){
         List<CovData> covDataList = new ArrayList<>();
         try{
@@ -63,10 +72,10 @@ public class CovDataService {
     }
 
     /**
-     *
+     * this function takes a country and a date in parameter and returns the cumulated data for that country on the given date
      * @param pays
      * @param date
-     * @return
+     * @return result
      */
     public CovData getByPaysAndDate(String pays, LocalDate date){
         try{
@@ -77,6 +86,43 @@ public class CovDataService {
         return null;
     }
 
+    /**
+     * this function takes a country and a date in parameter and returns the non cumulated data for that country on the given date
+     * @param pays
+     * @param date
+     * @return result
+     */
+
+    public CovData getByPaysAndDateNonCumule(String pays, LocalDate date){
+
+        try{
+            CovData presentCovData = covDataRepository.findByPaysAndDate(pays, date);
+            CovData previousCovData = covDataRepository.findByPaysAndDate(pays, date.minusDays(1));
+            CovData result = new CovData();
+
+            result.setId(presentCovData.getId());
+            result.setPays(pays);
+            result.setDate(date);
+            result.setDeces(presentCovData.getDeces() - previousCovData.getDeces());
+            result.setInfections(presentCovData.getInfections() - previousCovData.getInfections());
+            result.setGuerisons(presentCovData.getGuerisons() - previousCovData.getGuerisons());
+            result.setTauxDeces(presentCovData.getTauxDeces());
+            result.setTauxGuerison(presentCovData.getTauxGuerison());
+            result.setTauxInfection(presentCovData.getTauxInfection());
+
+            logger.info(result);
+            return result;
+        }catch (Exception e){
+            logger.error(e.getMessage());
+        }
+        return null;
+    }
+
+    /**
+     * this function takes a country name as a parameter and returns the non cumulated data for the current day
+     * @param pays
+     * @return result
+     */
     public CovData getByPaysToday(String pays){
 
         try{
