@@ -1894,3 +1894,61 @@ Caused by: java.lang.IllegalStateException: Failed to replace DataSource with an
 2022-02-04 17:36:11,195 INFO c.c.s.CovDataServiceTest [main] No active profile set, falling back to default profiles: default
 2022-02-04 17:36:16,553 INFO c.c.s.CovDataServiceTest [main] Started CovDataServiceTest in 5.661 seconds (JVM running for 7.331)
 2022-02-04 17:36:16,904 INFO c.c.s.CovDataService [main] CovData(id=147, date=2022-02-04, pays=France, infections=0, deces=0, guerisons=0, tauxDeces=0.66, tauxGuerison=0.0, tauxInfection=99.34)
+2022-02-07 13:49:59,751 INFO c.c.s.CovDataServiceTest [main] Starting CovDataServiceTest using Java 15.0.1 on DESKTOP-F0376HQ with PID 3032 (started by moham in C:\Users\moham\IdeaProjects\covstat)
+2022-02-07 13:49:59,761 DEBUG c.c.s.CovDataServiceTest [main] Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-02-07 13:49:59,761 INFO c.c.s.CovDataServiceTest [main] No active profile set, falling back to default profiles: default
+2022-02-07 13:50:07,875 INFO c.c.s.CovDataServiceTest [main] Started CovDataServiceTest in 8.538 seconds (JVM running for 11.179)
+2022-02-07 13:50:08,901 ERROR c.c.s.CovDataService [main] Cannot invoke "com.covstats.entities.CovData.getId()" because "covDataToday" is null
+2022-02-07 13:50:11,156 INFO c.c.CovstatApplication [restartedMain] Starting CovstatApplication using Java 15.0.1 on DESKTOP-F0376HQ with PID 7944 (C:\Users\moham\IdeaProjects\covstat\target\classes started by moham in C:\Users\moham\IdeaProjects\covstat)
+2022-02-07 13:50:11,167 DEBUG c.c.CovstatApplication [restartedMain] Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-02-07 13:50:11,168 INFO c.c.CovstatApplication [restartedMain] No active profile set, falling back to default profiles: default
+2022-02-07 13:50:15,321 INFO c.c.CovstatApplication [restartedMain] Started CovstatApplication in 4.726 seconds (JVM running for 6.947)
+2022-02-07 13:50:21,630 INFO c.c.CovstatApplication [restartedMain] Starting CovstatApplication using Java 15.0.1 on DESKTOP-F0376HQ with PID 13016 (C:\Users\moham\IdeaProjects\covstat\target\classes started by moham in C:\Users\moham\IdeaProjects\covstat)
+2022-02-07 13:50:21,641 DEBUG c.c.CovstatApplication [restartedMain] Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-02-07 13:50:21,641 INFO c.c.CovstatApplication [restartedMain] No active profile set, falling back to default profiles: default
+2022-02-07 13:50:25,873 INFO c.c.CovstatApplication [restartedMain] Started CovstatApplication in 4.673 seconds (JVM running for 6.123)
+2022-02-07 13:52:29,808 DEBUG c.c.s.CovDataService [scheduling-1] save called
+2022-02-07 13:56:57,203 INFO c.c.CovstatApplication [restartedMain] Starting CovstatApplication using Java 15.0.1 on DESKTOP-F0376HQ with PID 1560 (C:\Users\moham\IdeaProjects\covstat\target\classes started by moham in C:\Users\moham\IdeaProjects\covstat)
+2022-02-07 13:56:57,213 DEBUG c.c.CovstatApplication [restartedMain] Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-02-07 13:56:57,213 INFO c.c.CovstatApplication [restartedMain] No active profile set, falling back to default profiles: default
+2022-02-07 13:57:02,223 INFO c.c.CovstatApplication [restartedMain] Started CovstatApplication in 5.543 seconds (JVM running for 7.189)
+2022-02-07 13:57:43,823 INFO c.c.c.CovDataController [http-nio-8080-exec-2] get today's country data called
+2022-02-07 13:57:44,080 INFO c.c.s.CovDataService [http-nio-8080-exec-2] CovData(id=6481, date=2022-02-07, pays=maroc, infections=0, deces=0, guerisons=0, tauxDeces=1.36, tauxGuerison=0.0, tauxInfection=98.64)
+2022-02-07 13:58:35,161 INFO c.c.c.CovDataController [http-nio-8080-exec-9] get country data by date called
+2022-02-07 13:58:35,191 INFO c.c.s.CovDataService [http-nio-8080-exec-9] CovData(id=6481, date=2022-02-07, pays=maroc, infections=0, deces=0, guerisons=0, tauxDeces=1.36, tauxGuerison=0.0, tauxInfection=98.64)
+2022-02-07 14:09:33,131 INFO c.c.s.CovDataServiceTest [main] Starting CovDataServiceTest using Java 15.0.1 on DESKTOP-F0376HQ with PID 10912 (started by moham in C:\Users\moham\IdeaProjects\covstat)
+2022-02-07 14:09:33,143 DEBUG c.c.s.CovDataServiceTest [main] Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-02-07 14:09:33,143 INFO c.c.s.CovDataServiceTest [main] No active profile set, falling back to default profiles: default
+2022-02-07 14:09:40,275 INFO c.c.s.CovDataServiceTest [main] Started CovDataServiceTest in 7.548 seconds (JVM running for 10.126)
+2022-02-07 14:09:40,798 INFO c.c.s.CovDataService [main] CovData(id=6533, date=2022-02-07, pays=France, infections=0, deces=0, guerisons=0, tauxDeces=0.64, tauxGuerison=0.0, tauxInfection=99.36)
+2022-02-07 14:09:40,848 INFO c.c.s.CovDataService [main] CovData(id=6533, date=2022-02-07, pays=France, infections=0, deces=0, guerisons=0, tauxDeces=0.64, tauxGuerison=0.0, tauxInfection=99.36)
+2022-02-07 14:11:25,051 INFO c.c.s.CovDataServiceTest [main] Starting CovDataServiceTest using Java 15.0.1 on DESKTOP-F0376HQ with PID 7892 (started by moham in C:\Users\moham\IdeaProjects\covstat)
+2022-02-07 14:11:25,063 DEBUG c.c.s.CovDataServiceTest [main] Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-02-07 14:11:25,064 INFO c.c.s.CovDataServiceTest [main] No active profile set, falling back to default profiles: default
+2022-02-07 14:11:32,195 INFO c.c.s.CovDataServiceTest [main] Started CovDataServiceTest in 7.535 seconds (JVM running for 9.789)
+2022-02-07 14:11:32,700 INFO c.c.s.CovDataService [main] CovData(id=6533, date=2022-02-07, pays=France, infections=0, deces=0, guerisons=0, tauxDeces=0.64, tauxGuerison=0.0, tauxInfection=99.36)
+2022-02-07 14:11:32,746 INFO c.c.s.CovDataService [main] CovData(id=6533, date=2022-02-07, pays=France, infections=0, deces=0, guerisons=0, tauxDeces=0.64, tauxGuerison=0.0, tauxInfection=99.36)
+2022-02-07 14:13:23,753 INFO c.c.s.CovDataServiceTest [main] Starting CovDataServiceTest using Java 15.0.1 on DESKTOP-F0376HQ with PID 10588 (started by moham in C:\Users\moham\IdeaProjects\covstat)
+2022-02-07 14:13:23,767 DEBUG c.c.s.CovDataServiceTest [main] Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-02-07 14:13:23,767 INFO c.c.s.CovDataServiceTest [main] No active profile set, falling back to default profiles: default
+2022-02-07 14:13:31,280 INFO c.c.s.CovDataServiceTest [main] Started CovDataServiceTest in 7.913 seconds (JVM running for 10.206)
+2022-02-07 14:13:31,835 INFO c.c.s.CovDataService [main] CovData(id=6533, date=2022-02-07, pays=France, infections=0, deces=0, guerisons=0, tauxDeces=0.64, tauxGuerison=0.0, tauxInfection=99.36)
+2022-02-07 14:13:31,874 INFO c.c.s.CovDataService [main] CovData(id=6533, date=2022-02-07, pays=France, infections=0, deces=0, guerisons=0, tauxDeces=0.64, tauxGuerison=0.0, tauxInfection=99.36)
+2022-02-07 14:16:10,261 INFO c.c.s.CovDataServiceTest [main] Starting CovDataServiceTest using Java 15.0.1 on DESKTOP-F0376HQ with PID 12560 (started by moham in C:\Users\moham\IdeaProjects\covstat)
+2022-02-07 14:16:10,280 DEBUG c.c.s.CovDataServiceTest [main] Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-02-07 14:16:10,280 INFO c.c.s.CovDataServiceTest [main] No active profile set, falling back to default profiles: default
+2022-02-07 14:16:17,445 INFO c.c.s.CovDataServiceTest [main] Started CovDataServiceTest in 7.575 seconds (JVM running for 9.902)
+2022-02-07 14:16:18,025 INFO c.c.s.CovDataService [main] CovData(id=6533, date=2022-02-07, pays=France, infections=0, deces=0, guerisons=0, tauxDeces=0.64, tauxGuerison=0.0, tauxInfection=99.36)
+2022-02-07 14:16:18,073 INFO c.c.s.CovDataService [main] CovData(id=6533, date=2022-02-07, pays=France, infections=0, deces=0, guerisons=0, tauxDeces=0.64, tauxGuerison=0.0, tauxInfection=99.36)
+2022-02-07 14:18:04,935 INFO c.c.s.CovDataServiceTest [main] Starting CovDataServiceTest using Java 15.0.1 on DESKTOP-F0376HQ with PID 14220 (started by moham in C:\Users\moham\IdeaProjects\covstat)
+2022-02-07 14:18:04,947 DEBUG c.c.s.CovDataServiceTest [main] Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-02-07 14:18:04,947 INFO c.c.s.CovDataServiceTest [main] No active profile set, falling back to default profiles: default
+2022-02-07 14:18:12,046 INFO c.c.s.CovDataServiceTest [main] Started CovDataServiceTest in 7.476 seconds (JVM running for 9.753)
+2022-02-07 14:18:12,577 INFO c.c.s.CovDataService [main] CovData(id=6533, date=2022-02-07, pays=France, infections=0, deces=0, guerisons=0, tauxDeces=0.64, tauxGuerison=0.0, tauxInfection=99.36)
+2022-02-07 14:18:12,617 INFO c.c.s.CovDataService [main] CovData(id=6533, date=2022-02-07, pays=France, infections=0, deces=0, guerisons=0, tauxDeces=0.64, tauxGuerison=0.0, tauxInfection=99.36)
+2022-02-07 14:18:27,388 INFO c.c.s.CovDataServiceTest [main] Starting CovDataServiceTest using Java 15.0.1 on DESKTOP-F0376HQ with PID 3636 (started by moham in C:\Users\moham\IdeaProjects\covstat)
+2022-02-07 14:18:27,402 DEBUG c.c.s.CovDataServiceTest [main] Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-02-07 14:18:27,402 INFO c.c.s.CovDataServiceTest [main] No active profile set, falling back to default profiles: default
+2022-02-07 14:18:34,549 INFO c.c.s.CovDataServiceTest [main] Started CovDataServiceTest in 7.543 seconds (JVM running for 9.757)
+2022-02-07 14:18:35,094 INFO c.c.s.CovDataService [main] CovData(id=6533, date=2022-02-07, pays=France, infections=0, deces=0, guerisons=0, tauxDeces=0.64, tauxGuerison=0.0, tauxInfection=99.36)
+2022-02-07 14:18:35,132 INFO c.c.s.CovDataService [main] CovData(id=6533, date=2022-02-07, pays=France, infections=0, deces=0, guerisons=0, tauxDeces=0.64, tauxGuerison=0.0, tauxInfection=99.36)
